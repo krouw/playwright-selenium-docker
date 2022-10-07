@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  pw:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pw-remote
+    ports:
+      - 8888:8888
