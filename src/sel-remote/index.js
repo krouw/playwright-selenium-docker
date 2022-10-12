@@ -1,4 +1,4 @@
-import { Builder, Capabilities } from "selenium-webdriver";
+import { Builder, Capabilities, FileDetector } from "selenium-webdriver";
 import * as firefoxSelenium from "selenium-webdriver/firefox.js";
 
 const options = new firefoxSelenium.Options().setPreference(
@@ -13,6 +13,8 @@ const driver = new Builder()
     .forBrowser('firefox')
     .setFirefoxOptions(options)
     .build();
+
+driver.setFileDetector(new FileDetector())
 
 await driver.get('https://selenium.dev');
 
