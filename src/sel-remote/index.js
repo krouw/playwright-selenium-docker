@@ -10,10 +10,9 @@ const capabilities = Capabilities.firefox().getAcceptInsecureCerts()
 const driver = new Builder()
     .usingServer("http://localhost:4444/")
     .withCapabilities(capabilities)
+    .forBrowser('firefox')
+    .setFirefoxOptions(options)
     .build();
-
-
-
 
 await driver.get('https://selenium.dev');
 
